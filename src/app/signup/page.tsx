@@ -36,8 +36,8 @@ export default function SignupPage() {
             <input 
             className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white font-500 text-black"
             type="text"
-            id = "username"
-            value={user.username}
+            id = "email"
+            value={user.email}
             onChange={(e) => setUser({...user, email: e.target.value})}
             placeholder="email" />
 
@@ -45,13 +45,13 @@ export default function SignupPage() {
             <input 
             className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white font-500 text-black"
             type="password"
-            id = "username"
-            value={user.username}
+            id = "password"
+            value={user.password}
             onChange={(e) => setUser({...user, password: e.target.value})}
-            placeholder="username" />
+            placeholder="password" />
 
             <button
-             className="p-2 border border-gray-300 rounded-g mb-4 focus:outline-none focus:border-gray-600 bg-white text-black"
+             className="p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-gray-600 bg-black text-white border-white"
              onClick={onSignup}>
                 Signup here    
             </button>
