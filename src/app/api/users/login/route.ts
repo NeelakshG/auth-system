@@ -17,8 +17,8 @@ export async function POST(request: NextRequest) {
         const user = await User.findOne({email})
         
         //check if user exists
-        if (user) {
-            return NextResponse.json({error: "User already exists"}, {status: 400})
+        if (!user) {
+            return NextResponse.json({error: "User not found"}, {status: 404})
         }
 
         //check if password is correct
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
         //create the token data
         const tokenData = {
-            id: user.__id,
+            id: user._id,
             username: user.username,
             email: user.email
         }
